@@ -87,7 +87,7 @@ export const generateSeats = (wagon, trainId) => {
   const stored = localStorage.getItem(key);
   const bookedSeats = stored ? JSON.parse(stored) : [];
 
-  // Pre-generate some booked seats
+  // Pre-generate some booked seats for realism
   const preBooked =
     stored === null
       ? Array.from(
