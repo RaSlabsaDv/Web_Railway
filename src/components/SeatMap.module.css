@@ -1,0 +1,136 @@
+.wrapper {
+  margin-bottom: 28px;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.dot.free {
+  background: var(--seat-free);
+}
+
+.dot.selected {
+  background: var(--seat-selected);
+}
+
+.dot.booked {
+  background: var(--seat-booked);
+}
+
+.car {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.carFront {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.seatsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.seat {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seat.free {
+  background: var(--seat-free);
+  color: #fff;
+  border-color: transparent;
+}
+
+.seat.free:hover {
+  transform: scale(1.12);
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.35);
+}
+
+.seat.selected {
+  background: var(--seat-selected);
+  color: #fff;
+  border-color: transparent;
+  transform: scale(1.08);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+.seat.booked {
+  background: var(--seat-booked);
+  color: #fff;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.summary {
+  margin-top: 14px;
+  padding: 12px 16px;
+  background: rgba(0, 82, 163, 0.08);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--text);
+  border: 1px solid rgba(0, 82, 163, 0.2);
+}
+
+.summary strong {
+  color: var(--accent);
+}
+
+.status {
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.statusError {
+  padding: 20px 0;
+  color: var(--seat-booked);
+  font-size: 0.9rem;
+}
