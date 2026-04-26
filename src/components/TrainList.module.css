@@ -1,0 +1,111 @@
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+.searchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  padding: 14px 48px 14px 44px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input::placeholder {
+  color: var(--muted);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
+}
+
+.clear {
+  position: absolute;
+  right: 14px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 4px;
+  border-radius: 50%;
+  transition: color 0.2s;
+}
+
+.clear:hover {
+  color: var(--text);
+}
+
+.count {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.count strong {
+  color: var(--accent);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.empty span {
+  font-size: 2.5rem;
+}
+
+.empty p {
+  font-size: 1rem;
+}
+
+@media (min-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.status {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.statusError {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--seat-booked);
+  font-size: 0.95rem;
+}
