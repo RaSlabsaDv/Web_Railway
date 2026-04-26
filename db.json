@@ -1,0 +1,131 @@
+{
+  "trains": [
+    {
+      "id": "1",
+      "number": "747",
+      "from": "Київ",
+      "to": "Львів",
+      "departure": "2025-06-10T07:30:00",
+      "arrival": "2025-06-10T13:50:00",
+      "duration": "6г 20хв",
+      "wagons": [
+        { "id": "w1", "number": 1, "type": "Купе", "seats": 36, "price": 580 },
+        { "id": "w2", "number": 2, "type": "Плацкарт", "seats": 54, "price": 320 },
+        { "id": "w3", "number": 3, "type": "СВ", "seats": 18, "price": 1100 }
+      ]
+    },
+    {
+      "id": "2",
+      "number": "145",
+      "from": "Харків",
+      "to": "Одеса",
+      "departure": "2025-06-10T09:00:00",
+      "arrival": "2025-06-10T19:30:00",
+      "duration": "10г 30хв",
+      "wagons": [
+        { "id": "w4", "number": 1, "type": "Купе", "seats": 36, "price": 620 },
+        { "id": "w5", "number": 2, "type": "Плацкарт", "seats": 54, "price": 350 }
+      ]
+    },
+    {
+      "id": "3",
+      "number": "89",
+      "from": "Львів",
+      "to": "Дніпро",
+      "departure": "2025-06-10T14:15:00",
+      "arrival": "2025-06-11T06:45:00",
+      "duration": "16г 30хв",
+      "wagons": [
+        { "id": "w6", "number": 1, "type": "СВ", "seats": 18, "price": 1450 },
+        { "id": "w7", "number": 2, "type": "Купе", "seats": 36, "price": 700 },
+        { "id": "w8", "number": 3, "type": "Плацкарт", "seats": 54, "price": 400 }
+      ]
+    },
+    {
+      "id": "4",
+      "number": "236",
+      "from": "Київ",
+      "to": "Запоріжжя",
+      "departure": "2025-06-11T22:00:00",
+      "arrival": "2025-06-12T07:10:00",
+      "duration": "9г 10хв",
+      "wagons": [
+        { "id": "w9", "number": 1, "type": "Плацкарт", "seats": 54, "price": 280 },
+        { "id": "w10", "number": 2, "type": "Купе", "seats": 36, "price": 530 }
+      ]
+    },
+    {
+      "id": "5",
+      "number": "53",
+      "from": "Одеса",
+      "to": "Київ",
+      "departure": "2025-06-12T20:30:00",
+      "arrival": "2025-06-13T06:00:00",
+      "duration": "9г 30хв",
+      "wagons": [
+        { "id": "w11", "number": 1, "type": "СВ", "seats": 18, "price": 1250 },
+        { "id": "w12", "number": 2, "type": "Купе", "seats": 36, "price": 610 },
+        { "id": "w13", "number": 3, "type": "Плацкарт", "seats": 54, "price": 360 }
+      ]
+    },
+    {
+      "id": "6",
+      "number": "312",
+      "from": "Дніпро",
+      "to": "Харків",
+      "departure": "2025-06-13T11:40:00",
+      "arrival": "2025-06-13T16:00:00",
+      "duration": "4г 20хв",
+      "wagons": [
+        { "id": "w14", "number": 1, "type": "Купе", "seats": 36, "price": 490 },
+        { "id": "w15", "number": 2, "type": "Плацкарт", "seats": 54, "price": 290 }
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": "seed-1",
+      "trainId": "1",
+      "wagonId": "w1",
+      "seats": [3, 7, 12, 15, 20],
+      "name": "Тест Користувач",
+      "phone": "+380991234567",
+      "email": "test@example.com",
+      "price": 2900,
+      "date": "2025-06-01T10:00:00.000Z"
+    },
+    {
+      "id": "seed-2",
+      "trainId": "1",
+      "wagonId": "w2",
+      "seats": [1, 2, 5, 8, 11, 14, 17, 22, 25, 30],
+      "name": "Тест Користувач",
+      "phone": "+380991234567",
+      "email": "test@example.com",
+      "price": 3200,
+      "date": "2025-06-01T10:00:00.000Z"
+    },
+    {
+      "id": "seed-3",
+      "trainId": "2",
+      "wagonId": "w4",
+      "seats": [4, 9, 16, 21, 28, 33],
+      "name": "Тест Користувач",
+      "phone": "+380991234567",
+      "email": "test@example.com",
+      "price": 3720,
+      "date": "2025-06-01T10:00:00.000Z"
+    },
+    {
+      "id": "seed-4",
+      "trainId": "3",
+      "wagonId": "w7",
+      "seats": [2, 6, 10, 18, 24, 31, 35],
+      "name": "Тест Користувач",
+      "phone": "+380991234567",
+      "email": "test@example.com",
+      "price": 4900,
+      "date": "2025-06-01T10:00:00.000Z"
+    }
+  ]
+}
