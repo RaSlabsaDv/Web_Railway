@@ -6,10 +6,10 @@
 
 .back {
   background: none;
-  border: 1.5px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 8px 14px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--muted);
   cursor: pointer;
   margin-bottom: 20px;
@@ -19,6 +19,7 @@
 .back:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: var(--accent-dim);
 }
 
 .trainInfo {
@@ -27,6 +28,16 @@
   border-radius: 14px;
   padding: 20px 24px;
   margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.trainInfo::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--purple), var(--cyan));
 }
 
 .trainHeader {
@@ -40,13 +51,11 @@
   font-family: "Bebas Neue", cursive;
   font-size: 1.4rem;
   color: var(--accent);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
-.dateInfo {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
+.dateInfo { font-size: 0.8rem; color: var(--muted); }
 
 .route {
   display: flex;
@@ -55,26 +64,10 @@
   flex-wrap: wrap;
 }
 
-.city {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-.arrow {
-  color: var(--accent);
-  font-size: 1.2rem;
-}
-
-.time {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.dur {
-  color: var(--muted);
-  font-size: 0.82rem;
-}
+.city { font-weight: 700; font-size: 1.05rem; color: var(--text-bright); }
+.arrow { color: var(--accent); font-size: 1.1rem; }
+.time { color: var(--cyan); font-size: 0.88rem; font-weight: 600; }
+.dur  { color: var(--muted); font-size: 0.8rem; }
 
 .content {
   display: grid;
@@ -83,8 +76,5 @@
 }
 
 @media (min-width: 768px) {
-  .content {
-    grid-template-columns: 1fr 360px;
-    align-items: start;
-  }
+  .content { grid-template-columns: 1fr 340px; align-items: start; }
 }

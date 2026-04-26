@@ -1,20 +1,15 @@
-.wrapper {
-  margin-bottom: 28px;
-}
+.wrapper { margin-bottom: 28px; }
 
 .title {
-  font-size: 1rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--muted);
   margin-bottom: 12px;
-  letter-spacing: 0.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.list {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+.list { display: flex; gap: 10px; flex-wrap: wrap; }
 
 .wagon {
   display: flex;
@@ -22,7 +17,7 @@
   align-items: center;
   gap: 4px;
   padding: 14px 18px;
-  border: 2px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--card-bg);
   cursor: pointer;
@@ -32,37 +27,31 @@
 
 .wagon:hover {
   border-color: var(--accent);
-  box-shadow: 0 4px 16px rgba(0, 82, 163, 0.1);
+  background: var(--accent-dim);
 }
 
 .wagon.active {
   border-color: var(--accent);
-  background: rgba(0, 82, 163, 0.07);
+  background: var(--accent-dim);
+  box-shadow: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow);
 }
 
-.emoji {
-  font-size: 1.6rem;
-}
+.emoji { font-size: 1.6rem; }
 
 .num {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--text);
+  color: var(--text-bright);
 }
 
-.type {
-  font-size: 0.72rem;
-  color: var(--muted);
-}
+.type { font-size: 0.7rem; color: var(--muted); }
 
 .price {
   font-family: "Bebas Neue", cursive;
   font-size: 1.2rem;
   color: var(--accent);
   letter-spacing: 1px;
+  text-shadow: 0 0 8px var(--accent-glow);
 }
 
-.seats {
-  font-size: 0.7rem;
-  color: var(--muted);
-}
+.seats { font-size: 0.68rem; color: var(--muted); }

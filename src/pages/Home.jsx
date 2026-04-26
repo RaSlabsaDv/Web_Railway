@@ -5,11 +5,12 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <div className={styles.hero}>
+        <div className={styles.badge}>🚂 Квитки онлайн</div>
         <h1 className={styles.heading}>
-          <span className={styles.uk}>🇺🇦</span> Укрзалізниця
+          Залізниця<span className={styles.accent}> Коливана</span>
         </h1>
         <p className={styles.sub}>
-          Пошук та бронювання залізничних квитків по Україні
+          Пошук та бронювання залізничних квитків по всій країні
         </p>
       </div>
       <TrainList />

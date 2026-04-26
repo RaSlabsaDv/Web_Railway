@@ -2,16 +2,29 @@
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 24px;
+  padding: 22px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--purple), var(--cyan));
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0, 82, 163, 0.15);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px var(--accent);
   border-color: var(--accent);
 }
+
+.card:hover::before { opacity: 1; }
 
 .header {
   display: flex;
@@ -22,17 +35,19 @@
 
 .trainNum {
   font-family: "Bebas Neue", cursive;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--accent);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px var(--accent-glow);
 }
 
 .date {
-  font-size: 0.82rem;
+  font-size: 0.75rem;
   color: var(--muted);
   background: var(--surface);
   padding: 4px 10px;
   border-radius: 20px;
+  border: 1px solid var(--border);
 }
 
 .route {
@@ -46,25 +61,22 @@
 .city {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 4px;
-  min-width: 80px;
+  min-width: 70px;
 }
 
-.city:last-child {
-  align-items: flex-end;
-}
+.city:last-child { align-items: flex-end; }
 
 .time {
   font-family: "Bebas Neue", cursive;
   font-size: 2rem;
-  color: var(--text);
+  color: var(--text-bright);
   letter-spacing: 1px;
   line-height: 1;
 }
 
 .cityName {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--muted);
   font-weight: 500;
 }
@@ -78,7 +90,7 @@
 }
 
 .duration {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--muted);
   white-space: nowrap;
 }
@@ -91,11 +103,11 @@
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
+  width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent);
   flex-shrink: 0;
+  box-shadow: 0 0 8px var(--accent);
 }
 
 .dash {
@@ -103,17 +115,13 @@
   height: 2px;
   background: repeating-linear-gradient(
     to right,
-    var(--accent) 0,
-    var(--accent) 6px,
-    transparent 6px,
-    transparent 12px
+    var(--accent) 0, var(--accent) 5px,
+    transparent 5px, transparent 10px
   );
+  opacity: 0.5;
 }
 
-.arrow {
-  font-size: 1.2rem;
-  flex-shrink: 0;
-}
+.arrow { font-size: 1.2rem; flex-shrink: 0; }
 
 .footer {
   display: flex;
@@ -122,15 +130,10 @@
   flex-wrap: wrap;
 }
 
-.wagons {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  flex: 1;
-}
+.wagons { display: flex; gap: 6px; flex-wrap: wrap; flex: 1; }
 
 .wagonBadge {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   padding: 3px 8px;
   border-radius: 4px;
   background: var(--surface);
@@ -145,11 +148,7 @@
   align-items: flex-end;
 }
 
-.from {
-  font-size: 0.7rem;
-  color: var(--muted);
-  line-height: 1;
-}
+.from { font-size: 0.68rem; color: var(--muted); line-height: 1; }
 
 .price {
   font-family: "Bebas Neue", cursive;
@@ -157,26 +156,26 @@
   color: var(--accent);
   letter-spacing: 1px;
   line-height: 1;
+  text-shadow: 0 0 10px var(--accent-glow);
 }
 
 .btn {
-  background: var(--accent);
-  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #c850a0);
+  color: #1a1b2e;
   border: none;
   border-radius: 8px;
   padding: 10px 18px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.83rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  box-shadow: 0 4px 15px var(--accent-glow);
 }
 
 .btn:hover {
-  background: var(--accent-hover);
-  transform: scale(1.04);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(255,121,198,0.45);
 }
 
-.btn:active {
-  transform: scale(0.97);
-}
+.btn:active { transform: scale(0.97); }

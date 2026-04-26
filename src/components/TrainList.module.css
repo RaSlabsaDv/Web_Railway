@@ -1,5 +1,5 @@
 .wrapper {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 16px 48px;
 }
@@ -30,13 +30,11 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.input::placeholder {
-  color: var(--muted);
-}
+.input::placeholder { color: var(--muted); }
 
 .input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.12);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
 .clear {
@@ -52,24 +50,20 @@
   transition: color 0.2s;
 }
 
-.clear:hover {
-  color: var(--text);
-}
+.clear:hover { color: var(--accent); }
 
 .count {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--muted);
   margin-bottom: 16px;
 }
 
-.count strong {
-  color: var(--accent);
-}
+.count strong { color: var(--accent); }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 
 .empty {
@@ -82,19 +76,8 @@
   gap: 12px;
 }
 
-.empty span {
-  font-size: 2.5rem;
-}
-
-.empty p {
-  font-size: 1rem;
-}
-
-@media (min-width: 680px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+.empty span { font-size: 2.5rem; }
+.empty p { font-size: 1rem; }
 
 .status {
   text-align: center;
@@ -108,4 +91,8 @@
   padding: 40px 0;
   color: var(--seat-booked);
   font-size: 0.95rem;
+}
+
+@media (min-width: 680px) {
+  .grid { grid-template-columns: 1fr 1fr; }
 }
