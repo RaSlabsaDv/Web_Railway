@@ -1,0 +1,44 @@
+.page {
+  min-height: 100vh;
+}
+
+.hero {
+  text-align: center;
+  padding: 56px 16px 36px;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 82, 163, 0.08) 0%,
+    transparent 60%
+  );
+  margin-bottom: 8px;
+}
+
+.heading {
+  font-family: "Bebas Neue", cursive;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: var(--text);
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.uk {
+  display: inline-block;
+  margin-right: 10px;
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-8deg); }
+  40% { transform: rotate(8deg); }
+  60% { transform: rotate(-4deg); }
+  80% { transform: rotate(4deg); }
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--muted);
+  max-width: 400px;
+  margin: 0 auto;
+}
