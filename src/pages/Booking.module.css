@@ -1,0 +1,90 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.back {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.back:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.trainInfo {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.trainHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.num {
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.4rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.dateInfo {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.city {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+.time {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.dur {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+  }
+}
