@@ -1,6 +1,6 @@
 const BASE = "http://localhost:3001";
 
-// ─── Trains ──────────────────────────────────────────────────────────────────
+// ─── Trains ───────────────────────────────────────────────────────────────────
 
 export async function fetchTrains() {
   const res = await fetch(`${BASE}/trains`);
@@ -17,29 +17,35 @@ export async function fetchTrain(id) {
 // ─── Bookings ─────────────────────────────────────────────────────────────────
 
 /**
- * Повертає всі заброньовані номери місць для конкретного вагону.
- * Single source of truth: дані приходять ТІЛЬКИ з json-server.
+ * Повертає всі заброньовані місця для вагону.
+ * json-server v1 фільтрує по точному збігу рядка,
+ * тому додатково фільтруємо на клієнті щоб не залежати від версії.
  */
 export async function fetchBookedSeats(trainId, wagonId) {
-  const res = await fetch(
-    `${BASE}/bookings?trainId=${trainId}&wagonId=${wagonId}`
-  );
+  // Отримуємо ВСІ бронювання і фільтруємо на клієнті —
+  // це гарантує коректну роботу незалежно від версії json-server
+  const res = await fetch(`${BASE}/bookings`);
   if (!res.ok) throw new Error("Не вдалося отримати заброньовані місця");
+
   const bookings = await res.json();
-  // Зводимо всі масиви seats в один плаский масив унікальних номерів
-  const allSeats = bookings.flatMap((b) => b.seats);
+
+  const relevant = bookings.filter(
+    (b) =>
+      String(b.trainId) === String(trainId) &&
+      String(b.wagonId) === String(wagonId)
+  );
+
+  const allSeats = relevant.flatMap((b) => b.seats);
   return [...new Set(allSeats)];
 }
 
 /**
- * Зберігає бронювання на mock-backend (json-server).
- * localStorage НЕ використовується для постійного збереження —
- * лише json-server є джерелом правди.
+ * Зберігає бронювання на json-server через POST /bookings.
+ * id НЕ передаємо — json-server генерує його сам.
  */
 export async function saveBooking(booking) {
   const payload = {
     ...booking,
-    id: `booking-${Date.now()}`,
     date: new Date().toISOString(),
   };
 
